@@ -19,13 +19,11 @@ def cut_function(value, cut_into, _):
     
     
 N = 6
-feature = 'TUCtoTUC'
+feature = 'AtoA'
 
-data = pd.read_csv('D:/Data/OPI_Particle/CF_Data_new.csv',header=1)
+data = pd.read_csv('D:/Data/Data_new.csv',header=1)
 
 data[feature+'_cut'] = cut_function(data[feature], N, 'qcut')
-
-# sns.countplot(x='ARCOtoARCO', hue='param_value', data=data, ax = axs )
 
 
 x = list(data[feature+'_cut'].value_counts(sort=False).index.astype(str))
